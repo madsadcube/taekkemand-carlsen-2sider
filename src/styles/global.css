@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6f4315;
+  --color-primary-container: #8b5a2b;
+  --color-primary-fixed: #ffdcc1;
+  --color-primary-fixed-dim: #f9ba82;
+  --color-on-primary: #fff;
+  --color-on-primary-container: #ffddc2;
+  --color-secondary: #516352;
+  --color-background: #fbf9f8;
+  --color-surface: #fbf9f8;
+  --color-surface-bright: #fbf9f8;
+  --color-surface-container: #f0eded;
+  --color-surface-container-low: #f6f3f2;
+  --color-surface-container-high: #eae8e7;
+  --color-on-background: #1b1c1c;
+  --color-on-surface: #1b1c1c;
+  --color-on-surface-variant: #51443a;
+  --color-outline: #6b5d52;
+  --color-outline-variant: #d5c3b6;
+  --color-tertiary: #654800;
+
+  --font-headline: "Newsreader", serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Manrope", sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Newsreader", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-on-background);
+  background: #f0ede9;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-headline);
+}
+
+/* ── Grain decoration ── */
+.grain-left,
+.grain-right {
+  position: absolute;
+  top: 0;
+  width: 220px;
+  height: 100%;
+  background-image: url('/img/stick.svg');
+  background-repeat: repeat-y;
+  background-size: 220px auto;
+  background-position: top center;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+}
+.grain-left  { left: 0; }
+.grain-right { right: 0; }
+
+@media (max-width: 1200px) {
+  .grain-left, .grain-right { display: none; }
+}
